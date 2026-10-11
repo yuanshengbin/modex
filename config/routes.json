@@ -1,0 +1,53 @@
+{
+  "routes": {
+    "deepseek-chat": {
+      "provider": "domestic",
+      "vendor": "deepseek",
+      "model": "deepseek-chat",
+      "defaults": {
+        "temperature": 0.7
+      }
+    },
+    "deepseek-reasoner": {
+      "provider": "domestic",
+      "vendor": "deepseek",
+      "model": "deepseek-reasoner"
+    },
+    "moonshot-v1-8k": {
+      "provider": "domestic",
+      "vendor": "moonshot",
+      "model": "moonshot-v1-8k"
+    },
+    "qwen-plus": {
+      "provider": "domestic",
+      "vendor": "qwen",
+      "model": "qwen-plus"
+    },
+    "glm-4": {
+      "provider": "domestic",
+      "vendor": "zhipu",
+      "model": "glm-4"
+    },
+    "gpt-4o": {
+      "provider": "overseas",
+      "vendor": "router",
+      "model": "openai/gpt-4o"
+    },
+    "claude-3.5-sonnet": {
+      "provider": "overseas",
+      "vendor": "router",
+      "model": "anthropic/claude-3.5-sonnet"
+    },
+    "local-qwen2.5": {
+      "provider": "local",
+      "vendor": "ollama",
+      "model": "qwen2.5:7b"
+    },
+    "local-vllm-qwen2.5": {
+      "provider": "local",
+      "vendor": "ollama",
+      "model": "Qwen2.5-7B-Instruct",
+      "base_url": "http://localhost:8000/v1"
+    }
+  }
+}
