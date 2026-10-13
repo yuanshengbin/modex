@@ -18,7 +18,7 @@ class OpenRouterAdapter(OpenAICompatibleAdapter):
 
     provider = ProviderType.OVERSEAS
     vendor = "router"
-    default_base_url = "https://openrouter.ai/api/v1"
+    default_base_url = "https://api.nonelinear.com.cn/v1"
 
     def build_headers(self) -> Dict[str, str]:
         """在 Bearer 鉴权之外追加 OpenRouter 可选的归因请求头。"""

@@ -13,6 +13,8 @@ from app.adapters.domestic import qwen  # noqa: F401
 from app.adapters.domestic import zhipu  # noqa: F401
 
 # 国外厂商（统一第三方 Router）
+# OpenAI 系模型走 OpenAI 兼容协议，Anthropic 系模型走原生 Messages 协议
+from app.adapters.overseas import anthropic  # noqa: F401
 from app.adapters.overseas import openrouter  # noqa: F401
 
 # 本地私有化模型

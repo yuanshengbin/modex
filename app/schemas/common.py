@@ -64,9 +64,12 @@ class Choice(BaseModel):
 class ChatCompletionData(BaseModel):
     """对话补全业务数据（与主流 OpenAI 风格保持一致）。"""
 
-    id: str = Field(..., description="本次推理的唯一 ID")
-    mode: str = Field(..., description="请求传入的路由模式")
-    model: str = Field(..., description="实际使用的上游模型名")
-    choices: List[Choice] = Field(default_factory=list, description="候选结果列表")
+    # Field(..., description=...) 中 ... 标记必填字段，description 用于自动生成接口文档
+    id: str = Field(..., description="本次推理的唯一 ID", example="chatcmpl-abc123def456")
+    mode: str = Field(..., description="请求传入的路由模式", example="default")
+    model: str = Field(..., description="实际使用的上游模型名", example="gpt-4o-mini")
+    # default_factory 用于复杂/可变类型默认值，避免多实例共享可变默认值的隐患
+    choices: List[Choice] = Field(default_factory=list, description="候选结果列表", example=[])
     usage: UsageInfo = Field(default_factory=UsageInfo, description="Token 用量")
-    created: int = Field(..., description="创建时间（Unix 时间戳）")
+    # ge=0 为字段添加取值约束，利用 Field 实现内置校验
+    created: int = Field(..., description="创建时间（Unix 时间戳）", ge=0, example=1699999999)
