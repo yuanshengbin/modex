@@ -32,7 +32,7 @@ class Settings(BaseSettings):
     app_name: str = "MODEX AI Backend"
     debug: bool = False
     cors_origins: List[str] = Field(default_factory=lambda: ["*"])
-    request_timeout: float = 60.0
+    request_timeout: float = 300.0
     routes_config_path: str = "config/routes.json"
 
     # ---------------- 国内厂商独立 API Key ----------------

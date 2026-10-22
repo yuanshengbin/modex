@@ -57,7 +57,7 @@ class BaseAdapter(ABC):
         *,
         api_key: Optional[str],
         base_url: str,
-        timeout: float = 60.0,
+        timeout: float = 300.0,
     ) -> None:
         self.api_key = api_key
         self.base_url = base_url.rstrip("/")
